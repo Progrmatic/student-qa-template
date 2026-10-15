@@ -1,0 +1,71 @@
+name: 卡關／提問
+description: 寫作業或跟著單元實作時卡住了，請講師一起看。
+title: "[提問] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        謝謝你把問題寫下來！這個 repo 是私人的，只有你和講師看得到，想問什麼都可以放心問。
+        先把下面幾格填好，講師就能直接對著你的程式碼回覆，少掉來回追問的時間。
+
+        > 請不要貼上密碼、token、API key 或任何個人資料。
+  - type: input
+    id: lesson
+    attributes:
+      label: 哪一個單元？
+      description: 單元名稱，或課程頁上的單元連結。
+      placeholder: 例如：第 3 章・背包問題 / https://progrmatic.com/lessons/...
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你想做到什麼？
+      description: 用一兩句話說明這段程式要完成的事。
+      placeholder: 例如：用滾動陣列把 0/1 背包的空間壓到一維。
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 實際發生了什麼？
+      description: 錯誤訊息、失敗的測試、輸出結果直接貼上即可，會自動排成程式碼格式。
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你預期的結果是什麼？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 怎麼重現？
+      description: 講師照著做就能看到同樣的問題。
+      placeholder: |
+        1. 切到分支 fix/knapsack
+        2. 執行 make test
+        3. 看到 TestKnapsack/case_3 失敗
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已經試過哪些方法？
+      description: 查過的資料、試過的改法、問 AI 得到的答案都可以寫。這能幫講師知道從哪裡開始。
+  - type: input
+    id: where
+    attributes:
+      label: 程式碼在哪裡？
+      description: 分支名稱、commit，或檔案與行數的連結（在 GitHub 上點行號就能複製連結）。
+      placeholder: 例如：分支 fix/knapsack，src/knapsack.go 第 20-35 行
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 執行環境（選填）
+      placeholder: 例如：macOS 14、Go 1.22、Node 22

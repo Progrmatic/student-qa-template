@@ -1,0 +1,40 @@
+name: 教材勘誤
+description: 影片、投影片或課程的範例程式碼裡有錯字、錯誤或過時的內容。
+title: "[勘誤] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        謝謝你幫忙讓教材更好！請告訴我們哪裡有問題，講師確認後會修正。
+  - type: input
+    id: lesson
+    attributes:
+      label: 哪一個單元？
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 出問題的是哪一種教材？
+      options:
+        - 影片
+        - 投影片
+        - 課程的範例程式碼
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 在哪裡？
+      description: 影片的時間點、投影片頁碼，或檔案路徑與行數。
+      placeholder: 例如：影片 12:30、投影片第 8 頁、src/main.go 第 42 行
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 哪裡有問題？應該是什麼？
+    validations:
+      required: true

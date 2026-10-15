@@ -1,0 +1,43 @@
+name: 請講師 review
+description: 寫好了、想請講師看看寫法、設計或還能怎麼改。
+title: "[Review] "
+labels: ["help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        建議先開一個 Pull Request（從你的分支合併到 main），再用這個 issue 請講師 review。
+        講師會直接在 PR 的程式碼上留言，比在 issue 裡貼程式碼清楚得多。
+  - type: input
+    id: lesson
+    attributes:
+      label: 哪一個單元？
+    validations:
+      required: true
+  - type: input
+    id: pr
+    attributes:
+      label: Pull Request 連結
+      description: 還沒開 PR 的話，填分支名稱也可以。
+      placeholder: 例如：#12，或分支 feat/cursor-pagination
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 你做了什麼？
+      description: 簡單說明這次的改動與思路。
+    validations:
+      required: true
+  - type: textarea
+    id: focus
+    attributes:
+      label: 希望講師特別看哪裡？
+      description: 例如效能、命名、錯誤處理、測試是否足夠，或某個你不確定的設計決定。
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 送出前確認
+      options:
+        - label: 測試都通過了（或已在上面說明哪些還沒過、為什麼）
+        - label: PR 裡沒有密碼、token 或其他機密資料

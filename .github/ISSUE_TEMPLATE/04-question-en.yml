@@ -1,0 +1,71 @@
+name: Question / Stuck
+description: You are stuck on an assignment or a lesson, and would like the instructor to take a look.
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for writing it down! This repository is private, visible only to you and the instructor, so ask anything.
+        Fill in the fields below and the instructor can answer against your actual code, without a round of follow-up questions.
+
+        > Please do not paste passwords, tokens, API keys or any personal data.
+  - type: input
+    id: lesson
+    attributes:
+      label: Which lesson?
+      description: The lesson's name, or its link from the course page.
+      placeholder: "e.g. Chapter 3 · Knapsack / https://progrmatic.com/lessons/..."
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to do?
+      description: A sentence or two on what this code should achieve.
+      placeholder: e.g. Bring the 0/1 knapsack down to one dimension with a rolling array.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happens?
+      description: Paste the error message, the failing test or the output as it is; it is formatted as code for you.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can it be reproduced?
+      description: Steps the instructor can follow to see the same problem.
+      placeholder: |
+        1. Switch to the branch fix/knapsack
+        2. Run make test
+        3. TestKnapsack/case_3 fails
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: What you looked up, what you changed, what an AI suggested. It tells the instructor where to start.
+  - type: input
+    id: where
+    attributes:
+      label: Where is the code?
+      description: A branch, a commit, or a link to the file and lines (click a line number on GitHub to copy one).
+      placeholder: e.g. branch fix/knapsack, src/knapsack.go lines 20-35
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment (optional)
+      placeholder: e.g. macOS 14, Go 1.22, Node 22

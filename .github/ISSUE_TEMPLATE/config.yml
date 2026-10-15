@@ -1,0 +1,10 @@
+# Only the course's own forms, in Chinese and in English: every question here
+# comes with what the instructor needs to answer it.
+blank_issues_enabled: false
+contact_links:
+  - name: 平台問題回報（公開） / Platform feedback (public)
+    url: https://github.com/Progrmatic/progrmatic-feedback
+    about: 網站、影片播放、GitHub 連結流程的問題請到這裡回報；這是公開的 repo，請不要貼上個人資料、付款資訊或你的程式碼。 / Problems with the site, video playback or linking GitHub. This repository is public; do not post personal data, payment details or your code.
+  - name: 帳務、退款與私人問題 / Billing, refunds and private matters
+    url: https://progrmatic.com/contact
+    about: 付款、退款、個資請求等需要私下處理的事，請透過「聯絡我們」頁面。 / Payments, refunds, data requests and anything private, through the contact page.

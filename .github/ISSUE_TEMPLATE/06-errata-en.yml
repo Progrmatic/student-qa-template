@@ -1,0 +1,40 @@
+name: Errata
+description: A video, a slide or the course's sample code has a typo, a mistake or something out of date.
+title: "[Errata] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make the course better! Tell us what is wrong; the instructor fixes it once confirmed.
+  - type: input
+    id: lesson
+    attributes:
+      label: Which lesson?
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which material?
+      options:
+        - Video
+        - Slides
+        - The course's sample code
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where?
+      description: The time in the video, the slide number, or the file path and line.
+      placeholder: e.g. video 12:30, slide 8, src/main.go line 42
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong, and what should it be?
+    validations:
+      required: true

@@ -1,0 +1,43 @@
+name: Code review request
+description: It works, and you would like the instructor to look at how it is written or designed.
+title: "[Review] "
+labels: ["help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open a pull request first (from your branch into main), then ask for the review with this issue.
+        The instructor comments right on the pull request's code, which is much clearer than code pasted into an issue.
+  - type: input
+    id: lesson
+    attributes:
+      label: Which lesson?
+    validations:
+      required: true
+  - type: input
+    id: pr
+    attributes:
+      label: Pull request
+      description: If there is no pull request yet, the branch's name will do.
+      placeholder: e.g. "#12, or the branch feat/cursor-pagination"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What did you do?
+      description: A short account of the change and your approach.
+    validations:
+      required: true
+  - type: textarea
+    id: focus
+    attributes:
+      label: What should the instructor look at closely?
+      description: For example performance, naming, error handling, whether the tests are enough, or a design decision you are unsure of.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send it
+      options:
+        - label: The tests pass (or I have said above which do not, and why)
+        - label: The pull request has no passwords, tokens or other secrets
